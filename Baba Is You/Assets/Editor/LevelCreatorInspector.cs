@@ -25,6 +25,8 @@ public class LevelCreatorInspector : Editor
         textureHolder.Add(ElementTypes.PushWord, (Texture)EditorGUIUtility.Load("Assets/EditorDefaultResources/pushword.png"));
         textureHolder.Add(ElementTypes.WinWord, (Texture)EditorGUIUtility.Load("Assets/EditorDefaultResources/winword.png"));
         textureHolder.Add(ElementTypes.StopWord, (Texture)EditorGUIUtility.Load("Assets/EditorDefaultResources/stopword.png"));
+        textureHolder.Add(ElementTypes.GoopWord, (Texture)EditorGUIUtility.Load("Assets/EditorDefaultResources/goopword.png"));
+        textureHolder.Add(ElementTypes.SinkWord, (Texture)EditorGUIUtility.Load("Assets/EditorDefaultResources/sinkword.png"));
     }
     ElementTypes currentSelected = ElementTypes.Empty;
     public override void OnInspectorGUI()

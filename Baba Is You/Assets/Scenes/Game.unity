@@ -157,6 +157,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 322781abe1597c44e867644b7f9c1da0, type: 2}
   - {fileID: 11400000, guid: ffe3a83ed1d349246977649da390e356, type: 2}
   - {fileID: 11400000, guid: c8a572d9b3f1c17468e853f39c3face1, type: 2}
+  - {fileID: 11400000, guid: 3b2372519cd90e74f8dcbfb002300652, type: 2}
   cells: []
   spriteLibrary:
   - element: 0
@@ -189,6 +190,12 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 11bd76c9195f35a4ba941847c8aaa490, type: 3}
   - element: 102
     sprite: {fileID: 21300000, guid: 1500d12a65560514a9e85820dfac5994, type: 3}
+  - element: 104
+    sprite: {fileID: 21300000, guid: f67a9bf5b07d3b84fb9635c3212eb77a, type: 3}
+  - element: 204
+    sprite: {fileID: 21300000, guid: 93cf5c80834210d46bf46d413e15aa8c, type: 3}
+  boundary: {fileID: 8374267159209293514, guid: cda37e514dd9e3c4299eb70bf3296685,
+    type: 3}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -239,7 +246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 9.53, z: -10}
+  m_LocalPosition: {x: 7.34, y: 6.55, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

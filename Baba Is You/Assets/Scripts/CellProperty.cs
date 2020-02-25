@@ -6,7 +6,7 @@ public class CellProperty : MonoBehaviour
 {
     ElementTypes element;
     bool isPushable;
-    bool destroysPlayer;
+    bool destroysObject;
     bool isWin;
     bool isPlayer;
     bool isStop;
@@ -62,7 +62,7 @@ public class CellProperty : MonoBehaviour
     public void Initialize()
     {
         isPushable = false;
-        destroysPlayer = false;
+        destroysObject = false;
         isWin = false;
         isPlayer = false;
         isStop = false;
@@ -94,7 +94,7 @@ public class CellProperty : MonoBehaviour
     {
         element = c.element;
          isPushable = c.isPushable;
-         destroysPlayer = c.destroysPlayer;
+         destroysObject = c.destroysObject;
          isWin = c.isWin;
          isPlayer = c.isPlayer;
          isStop = c.IsStop;
@@ -122,17 +122,15 @@ public class CellProperty : MonoBehaviour
     }
     public void IsItDestroy(bool isD)
     {
-        destroysPlayer = isD;
+        destroysObject = isD;
     }
 
     void Update()
     {
-
+        CheckDestroy();
         if (isPlayer)
         {
             
-
-
             if (Input.GetKeyDown(KeyCode.RightArrow) && currentCol + 1 < GridMaker.instance.Cols && !GridMaker.instance.IsStop(currentRow, currentCol + 1,Vector2.right))
             {
                 List<GameObject> movingObject = new List<GameObject>();
@@ -245,7 +243,32 @@ public class CellProperty : MonoBehaviour
                 GridMaker.instance.NextLevel();
             }
         }
-       
+    }
 
+
+    public void CheckDestroy()
+    {
+        List<GameObject> objectsAtPosition = GridMaker.instance.FindObjectsAt(currentRow, currentCol);
+        bool destroys = false;
+        bool normalObject = false;
+        foreach(GameObject g in objectsAtPosition)
+        {
+            if (!g.GetComponent<CellProperty>().destroysObject)
+            {
+                normalObject = true;
+            }
+            if (g.GetComponent<CellProperty>().destroysObject)
+            {
+                destroys = true;
+            }
+        }
+
+        if (destroys&&normalObject)
+        {
+            foreach (GameObject g in objectsAtPosition)
+            {
+                Destroy(g);
+            }
+        }
     }
 }

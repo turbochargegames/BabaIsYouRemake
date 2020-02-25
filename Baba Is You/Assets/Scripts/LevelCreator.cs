@@ -16,6 +16,7 @@ public enum ElementTypes
     WallWord,
     FlagWord,
     RockWord,
+    GoopWord,
 
     
 
@@ -23,6 +24,8 @@ public enum ElementTypes
     PushWord,
     WinWord,
     StopWord,
+    SinkWord,
+
 }
 
 [CreateAssetMenu()][System.Serializable]
